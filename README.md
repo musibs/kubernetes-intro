@@ -97,9 +97,9 @@ $ docker push localhost:5000/apps/demo
 Create a basic manifest:
 
 ```
-$ kubectl create deployment demo --image=localhost:5000/apps/demo --dry-run -o=yaml > deployment.yaml
+$ kubectl create deployment demo --image=localhost:5000/apps/demo --dry-run=client -o=yaml > deployment.yaml
 $ echo --- >> deployment.yaml
-$ kubectl create service clusterip demo --tcp=80:8080 --dry-run -o=yaml >> deployment.yaml
+$ kubectl create service clusterip demo --tcp=80:8080 --dry-run=client -o=yaml >> deployment.yaml
 ```
 
 Apply it:
